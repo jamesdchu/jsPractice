@@ -5,11 +5,12 @@ import App from "./App"
 // import App from './App';
 // import reportWebVitals from './reportWebVitals';
 
+const [mostImportant,,thirdImportant] = ["sneakers", "tent", "instant noodles"];
+console.log(mostImportant, thirdImportant); 
+
 
 ReactDOM.render(
-
-    <App authorized={false} />
-
+  <App authorized={false} />
   document.getElementById("root")
 );
 
