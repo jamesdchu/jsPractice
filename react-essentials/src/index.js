@@ -5,10 +5,12 @@ import App from "./App"
 // import App from './App';
 // import reportWebVitals from './reportWebVitals';
 
-ReactDOM.render(<App />
-  document.getElementsByID("root")
-  // React.createElement("h1", {style: {color:"red"}}, "Yurrrrrr"),
-  // document.getElementById('root')
+
+ReactDOM.render(
+
+    <App />
+
+  document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function
