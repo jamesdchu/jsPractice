@@ -1,26 +1,27 @@
 import logo from './logo.svg';
 import './App.css';
 
-function Header() { 
+function Header(props) { 
+  console.log(props);
   return (
     <header>
-      <h1>James' Kitchen</h1> 
+      <h1>{props.name}s' Kitchen</h1> 
     </header>
   )
 }
 
-function Main() { 
+function Main(props) { 
   return ( 
     <section> 
-      <p>We serve the best top tier food around!</p>
+      <p>We serve the best {props.adjective} food around!</p>
     </section>
   )
 }
 
-function Footer() { 
+function Footer(props) { 
   return ( 
     <footer> 
-      <p>Zero cap</p>
+      <p>It's true as of {props.year}</p>
     </footer>
   )
 }
@@ -28,9 +29,9 @@ function Footer() {
 function App() {
   return (
     <div className="App">
-      <Header />
-      <Main />
-      <Footer />
+      <Header name="James"/>
+      <Main adjective="amazing"/>
+      <Footer year={new Date().getFullYear()}/>
     </div>
   );
 }
