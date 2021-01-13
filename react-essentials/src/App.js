@@ -6,12 +6,22 @@ import './App.css';
 
 function App() {
   const [data, setData] = useState(null); 
+  const [loading, setLoading] = useState(false); 
+  const [error, setError] = useState(null);
 
   useEffect(() => { 
+    if(!login) return;
+    setLoading(true);
     fetch('https://api.github.com/users/${login}')
       .then(() => Response.json())
-      .then(setData);
-  }, [])
+      .then(setData)
+      .then(() => setLoading(false))
+      .catch(setError);
+  }, [login])
+
+  if(loading) return <h1>Loading...</h1>
+  if(error) return <pre>{JSON.stringify(error,null,2)}</pre>
+  if(!data) return null;
   
   if(data) { 
     return(<div> 
@@ -22,11 +32,7 @@ function App() {
   }
   return <div>No User Available :(</div>
 
-  return (
-    <div> 
 
-    </div>
-    );
 }
 
 export default App;
