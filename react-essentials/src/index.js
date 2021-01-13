@@ -7,7 +7,7 @@ import App from "./App"
 
 
 ReactDOM.render(
-  <App />
+  <App login="jamesdchu"/>
   document.getElementById("root")
 );
 
