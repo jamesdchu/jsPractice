@@ -1,28 +1,24 @@
 // import logo from './logo.svg';
-import React, { useEffect, useState } from "react";
+import React, { useReducer } from "react";
 import './App.css';
 
-function App({authorized}) {
-  const [emotion, setEmotion] = useState("happy");
-  const [secondary, setSecondary] = useState("tired");
-  
-  useEffect(() => { 
-    console.log('Its ${emotion} around here!');
-  }, [emotion]);
+function App() {
+  const [checked, toggle] = useReducer(
+    (checked) => !checked,
+    false
+    );
 
-  useEffect(() => { 
-    console.log("It's ${secondary} around here!");
-  }, [secondary]);
+
 
   return (
   <> 
-    <h1>Current emotion is {emotion} and {secondary}.</h1>;
-    <button onClick={() => setEmotion("happy")}> Happy </button>
-    <button onCLick={() => setSecondary("crabby")}>Make Crabby</button>
-    <button onClick={() => setEmotion("frustrated")}>Frustrate</button>
-    <button onClick={() => setEmotion("enthusiastic")}>Enthuse</button>
-  </> 
-  );
+    <input 
+    type="checkbox"
+    value={checked} 
+    onChange={toggle}/> 
+    <p>{checked ? "checked" : "not checked"}</p> 
+  </>
+    );
 }
 
 export default App;
