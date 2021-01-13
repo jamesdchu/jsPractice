@@ -1,5 +1,5 @@
 import React from "react"
-import {Link, useLocation} from "react-router-dom";
+import {Link, useLocation, Outlet} from "react-router-dom";
 
 export function Home() { 
     return ( 
@@ -12,11 +12,7 @@ export function About() {
     return ( 
         <div>
             <h1>[About]</h1>
-            <nav> 
-                <Link to="about">About</Link>
-                <Link to="events">Events</Link>
-                <Link to="contact">Contact</Link>
-            </nav>
+            <Outlet /> 
         </div>
     );
 }
