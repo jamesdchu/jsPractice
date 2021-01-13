@@ -20,6 +20,30 @@ export function About() {
         </div>
     );
 }
+
+export function Services() { 
+    return ( 
+        <div> 
+            <h2>Our Services</h2>
+        </div>
+    )
+};
+export function CompanyHistory() { 
+    return ( 
+        <div> 
+            <h2>Our Company History</h2>
+        </div>
+    )
+};
+export function Location() { 
+    return ( 
+        <div> 
+            <h2>Our Location</h2>
+        </div>
+    )
+};
+
+
 export function Events() { 
     return ( 
         <div>
